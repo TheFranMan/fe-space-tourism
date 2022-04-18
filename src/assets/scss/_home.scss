@@ -1,0 +1,42 @@
+@use "variables" as vars;
+
+.home {
+    &__text-top {
+        font-family: vars.$ff-secondary;
+        font-size: 1.6rem;
+        letter-spacing: .16875em;
+        color: vars.$cl-accent;
+    }
+
+    &__title {
+        font-size: 8rem;
+        font-family: vars.$ff-accent;
+        line-height: 1.25;
+        text-transform: uppercase;
+        color: vars.$cl-secondary;
+        margin-block: .2em;
+    }
+
+    &__body {
+        font-size: 1.5rem;
+        font-family: vars.$ff-primary;
+        line-height: 1.666667;
+        color: vars.$cl-accent;
+        margin-bottom: 5.333333em;
+    }
+
+    &__explore {
+        display: block;
+        margin-inline: auto;
+        $dimension: 15rem;
+        width: $dimension;
+        height: $dimension;
+        background-color: vars.$cl-secondary;
+        border-radius: 50%;
+        color: vars.$cl-primary;
+        font-size: 2rem;
+        text-decoration: none;
+        line-height: $dimension;
+        margin-bottom: 1.2em;
+    }
+}

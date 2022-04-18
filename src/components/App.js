@@ -1,26 +1,34 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { useState } from "react"
 import Header from "./Header"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Home"
+import Destination from "./Destination"
+import PAGES from "../pages"
 import "../assets/scss/main.scss"
 
+
+
 function App() {
+  const [page, updatePage] = useState(PAGES.HOME)
+
   return (
-    <Router>
-      <Header></Header>
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="destination" element={<Destination />} />
-          <Route path="crew" element={<Crew />} />
-          <Route path="technology" element={<Technology />} />
-        </Routes>
-      </main>
-    </Router>
+    <div className={ `container ${page}` }>
+      <Router>
+        <Header updatePage={ updatePage }></Header>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home updatePage={ updatePage }/>} />
+            <Route path="destination" element={<Destination />} />
+            <Route path="crew" element={<Crew />} />
+            <Route path="technology" element={<Technology />} />
+          </Routes>
+        </main>
+      </Router>
+    </div>
   )
 }
 
-function Home() { return "Home" }
-function Destination() { return "Destination" }
-function Crew() { return "Crew" }
-function Technology() { return "Technology" }
+const Crew = () => "Crew"
+const Technology = () => "Technology"
 
 export default App;

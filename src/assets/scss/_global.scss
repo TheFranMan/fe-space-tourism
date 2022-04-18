@@ -31,6 +31,35 @@ html {
 }
 
 body {
-  background-color: vars.$cl-primary;
+  // background-color: vars.$cl-primary;
+  background-color: blue;
   color: vars.$cl-secondary;
+}
+
+.container {
+  // width: minmax(vars.$mobile, vars.$desktop);
+  min-width: calc(100vw - 2.4em);
+  max-width: vars.$desktop;
+  margin-inline: auto;
+  padding: 2.4em;
+  text-align: center;
+  font-family: vars.$ff-primary;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &.home {
+    background-image: url("../images/home/background-home-mobile.jpg");
+  }
+
+  &.destination {
+    background-image: url("../images/destination/background-destination-mobile.jpg");
+  }
+
+  &.crew {
+    background-image: url("../images/crew/background-crew-mobile.jpg");
+  }
+
+  &.technology {
+    background-image: url("../images/technology/background-technology-mobile.jpg");
+  }
 }
