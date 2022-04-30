@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import PAGES from "../pages"
-// import { ReactComponent as Hamburger } from "../assets/images/shared/icon-hamburger.svg"
+import { ReactComponent as Hamburger } from "../assets/images/shared/icon-hamburger.svg"
 // import Close from "../assets/images/shared/icon-close.svg"
 
 const Nav = ({ updatePage }) => {
@@ -10,7 +10,7 @@ const Nav = ({ updatePage }) => {
 
     return (
         <nav className="nav">
-            <button type="button" className="nav__btn" onClick={ handleClick }>X</button>
+            <button type="button" className="nav__btn" onClick={ handleClick }><Hamburger /></button>
             <ul className={ `nav__list ${ isNavOpen ? "open" : "" }` }>
                 <li className="nav__items__item">
                     <Link to="/" className="nav__items__item__link" onClick={() => updatePage(PAGES.HOME)}>

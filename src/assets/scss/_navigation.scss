@@ -7,8 +7,8 @@
     &__btn {
         position: relative;
         z-index: 2; // Allow it to be clickable
-        width: 2.4em;
-        height: 2.1em;
+        background-color: rgba(1 1 1 / 0);
+        border: none;
     }
 
     &__list {
