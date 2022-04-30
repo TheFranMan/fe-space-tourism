@@ -1,3 +1,5 @@
+@use "variables" as vars;
+
 .nav {
     &__btn,
     &__list {
@@ -12,13 +14,35 @@
     }
 
     &__list {
+        width: 254px;
+        height: 100vh;
         right: 0;
         position: absolute;
         list-style-type: none;
         z-index: 1; // Allow the button to be clickable
         transform: translateX(100%);
         transition: transform .2s ease-in-out;
-        background-color: yellow;
+        background-color: rgba(1 1 1 / .9);
+        text-align: left;
+        padding: 11.8em 0 0 3.2em;
+
+        &__item {
+            margin-bottom: 3.2em;
+
+            &__link {
+                color: vars.$cl-secondary;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-family: vars.$ff-secondary;
+                font-size: 1.6rem;
+                letter-spacing: .16875em;
+
+                .num {
+                    font-weight: 700; // Todo: include bold font
+                    margin-right: .75em;
+                }
+            }
+        }
 
         &:focus-within,
         &.open {
