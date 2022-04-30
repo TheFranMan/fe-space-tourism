@@ -3,6 +3,7 @@
 .home {
     &__text-top {
         font-family: vars.$ff-secondary;
+        text-transform: uppercase;
         font-size: 1.6rem;
         letter-spacing: .16875em;
         color: vars.$cl-accent;
@@ -11,6 +12,7 @@
     &__title {
         font-size: 8rem;
         font-family: vars.$ff-accent;
+        font-weight: vars.$fw-regular;
         line-height: 1.25;
         text-transform: uppercase;
         color: vars.$cl-secondary;
@@ -34,8 +36,11 @@
         background-color: vars.$cl-secondary;
         border-radius: 50%;
         color: vars.$cl-primary;
+        font-family: vars.$ff-accent;
         font-size: 2rem;
+        letter-spacing: 1.25px;
         text-decoration: none;
+        text-transform: uppercase;
         line-height: $dimension;
         margin-bottom: 1.2em;
     }
