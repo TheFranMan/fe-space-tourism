@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PAGES from "../pages"
 
-const Home = ({updatePage}) => {
+const Home = ({handleNavClick}) => {
     return(
         <section className="home" aria-labelledby="home-title">
             <p className="home__text-top">So, you want to travel to</p>
@@ -10,7 +10,7 @@ const Home = ({updatePage}) => {
             outer space and not hover kind of on the edge of it. Well sit back, and relax
             because we’ll give you a truly out of this world experience!</p>
 
-            <Link to="/destination" className="home__explore" onClick={() => updatePage(PAGES.DESTINATION)}>Explore</Link>
+            <Link to="/destination" className="home__explore" onClick={(e) => handleNavClick(e, PAGES.DESTINATION)}>Explore</Link>
         </section>
     )
 }

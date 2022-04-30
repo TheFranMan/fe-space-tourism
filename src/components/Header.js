@@ -4,13 +4,13 @@ import PAGES from "../pages"
 import Logo from "../assets/images/shared/logo.svg"
 
 
-const Header = ({updatePage}) => {
+const Header = ({isNavOpen, updateIsNavOpen, handleNavClick}) => {
     return (
         <header className="header">
-            <Link to="/" className="header__logo" onClick={ () =>  updatePage(PAGES.HOME) }>
+            <Link to="/" className="header__logo" onClick={ (e) => handleNavClick(e, PAGES.HOME) }>
                 <img src={ Logo } alt="Space tourism logo" />
             </Link>
-            <Nav updatePage={ updatePage }/>
+            <Nav isNavOpen={ isNavOpen}  updateIsNavOpen={ updateIsNavOpen } handleNavClick={ handleNavClick }/>
         </header>
     )
 }

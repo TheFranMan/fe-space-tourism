@@ -10,14 +10,21 @@ import "../assets/scss/main.scss"
 
 function App() {
   const [page, updatePage] = useState(PAGES.HOME)
+  const [isNavOpen, updateIsNavOpen] = useState(false)
+
+  const handleNavClick = (e, dest) => {
+    e.target.blur() // Neccessary to close the mobile nav menu as it's elements retain focus.
+    updateIsNavOpen(false)
+    updatePage(dest)
+}
 
   return (
     <div className={ `container ${page}` }>
       <Router>
-        <Header updatePage={ updatePage }></Header>
+        <Header isNavOpen={ isNavOpen}  updateIsNavOpen={ updateIsNavOpen } handleNavClick={ handleNavClick }></Header>
         <main>
           <Routes>
-            <Route path="/" element={<Home updatePage={ updatePage }/>} />
+            <Route path="/" element={<Home handleNavClick={ handleNavClick }/>} />
             <Route path="destination" element={<Destination />} />
             <Route path="crew" element={<Crew />} />
             <Route path="technology" element={<Technology />} />
