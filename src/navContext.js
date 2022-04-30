@@ -27,10 +27,11 @@ export function NavProvider({ children }) {
     const [isNavOpen, updateIsNavOpen] = useState(false)
 
     function handleNavClick(e, dest) {
-      e.target.blur() // Neccessary to close the mobile nav menu as it's elements retain focus.
-      updateIsNavOpen(false)
-      updatePage(dest)
-  }
+        e.target.blur() // Neccessary to close the mobile nav menu as it's elements retain focus.
+        updateIsNavOpen(false)
+        updatePage(dest)
+        window.scrollTo(0, 0);
+    }
 
     return (
         <PageContext.Provider value={ page }>
