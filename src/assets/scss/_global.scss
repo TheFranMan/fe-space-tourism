@@ -31,8 +31,6 @@ html {
 }
 
 body {
-  // background-color: vars.$cl-primary;
-  background-color: blue;
   color: vars.$cl-secondary;
 }
 
@@ -46,6 +44,8 @@ body {
   font-family: vars.$ff-primary;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow-x: hidden;
+  position: relative;
 
   &.home {
     background-image: url("../images/home/background-home-mobile.jpg");
