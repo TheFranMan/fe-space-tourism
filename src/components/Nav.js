@@ -14,23 +14,23 @@ const Nav = () => {
             </button>
             <ul className={ `nav__list ${ isNavOpen ? "open" : "" }` }>
                 <li className="nav__list__item">
-                    <Link to="/" className="nav__list__item__link" onClick={(e) => navClick(e, PAGES.HOME)}>
-                        <span className="num">00</span>Home
+                    <Link to="/" className="nav__list__item__link" onClick={(e) => navClick(e, PAGES.HOME)} aria-current="page">
+                        <span className="num" aria-hidden>00</span>Home
                     </Link>
                 </li>
                 <li className="nav__list__item">
                     <Link to="/destination" className="nav__list__item__link" onClick={(e) => navClick(e, PAGES.DESTINATION)}>
-                        <span className="num">01</span>Destination
+                        <span className="num" aria-hidden>01</span>Destination
                     </Link>
                 </li>
                 <li className="nav__list__item">
                     <Link to="/crew" className="nav__list__item__link" onClick={(e) => navClick(e, PAGES.CREW)}>
-                        <span className="num">02</span>Crew
+                        <span className="num" aria-hidden>02</span>Crew
                     </Link>
                 </li>
                 <li className="nav__list__item">
                     <Link to="/technology" className="nav__list__item__link" onClick={(e) => navClick(e, PAGES.TECHNOLOGY)}>
-                        <span className="num">03</span>Technology
+                        <span className="num"aria-hidden>03</span>Technology
                     </Link>
                 </li>
             </ul>
