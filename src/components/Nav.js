@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import PAGES from "../pages"
-import { ReactComponent as Hamburger } from "../assets/images/shared/icon-hamburger.svg"
-import { ReactComponent as Close } from "../assets/images/shared/icon-close.svg"
 import { useNav, useNavUpdate, useNavClick } from "../navContext"
 
 const Nav = () => {
@@ -9,14 +7,11 @@ const Nav = () => {
     const navClick = useNavClick()
     const navUpdate = useNavUpdate()
 
-    let navIcon = <Hamburger />
-    if ( isNavOpen ) {
-        navIcon = <Close />
-    } // Todo: define the hamburger and close in CSS instead.
-
     return (
-        <nav className="nav">
-            <button type="button" className="nav__btn" onClick={ () => navUpdate(!isNavOpen) }>{ navIcon }</button>
+        <nav className={ `nav ${ isNavOpen ? "open" : "" }` }>
+            <button type="button" className="nav__btn" onClick={ () => navUpdate(!isNavOpen) }>
+                <span className={ `hamburger ${ isNavOpen ? "open" : "" }` }></span>
+            </button>
             <ul className={ `nav__list ${ isNavOpen ? "open" : "" }` }>
                 <li className="nav__list__item">
                     <Link to="/" className="nav__list__item__link" onClick={(e) => navClick(e, PAGES.HOME)}>
