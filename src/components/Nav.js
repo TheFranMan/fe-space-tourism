@@ -14,7 +14,7 @@ const Nav = () => {
             </button>
             <ul className={ `nav__list ${ isNavOpen ? "open" : "" }` }>
                 <li className="nav__list__item">
-                    <Link to="/" className="nav__list__item__link" onClick={(e) => navClick(e, PAGES.HOME)} aria-current="page">
+                    <Link to="/" className="nav__list__item__link" onClick={(e) => navClick(e, PAGES.HOME )} aria-current="page">
                         <span className="num" aria-hidden>00</span>Home
                     </Link>
                 </li>

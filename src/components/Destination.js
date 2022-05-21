@@ -6,7 +6,7 @@ import Titan from "../assets/images/destination/image-titan.webp"
 const Destination = () => {
     return (
         <section className="destinations" aria-labelledby="destintion-title">
-            <h2 className="destinations__title" id="destintion-title"><span>01</span>Pick your destination</h2>
+            <h2 className="destinations__title" id="destintion-title" tabIndex="-1"><span>01</span>Pick your destination</h2>
 
             <div className="destinations__tabs">
                 <div role="tabslist" aria-label="destinations">

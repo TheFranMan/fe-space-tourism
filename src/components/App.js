@@ -7,11 +7,15 @@ import { NavProvider, usePage } from "../navContext"
 
 
 function App() {
-  let page = usePage()
+  // Create Body component to be wrapped by NavProvider. This way we can use "usePage" as it is a child of NavProvider.
+  const Body = () => {
+    let page = usePage()
 
-  return (
-    <NavProvider>
+    return (
       <div className={ `container ${page}` }>
+        <div className="sr-only" aria-live="polite" aria-atomic="true">
+          The { page } page has loaded
+        </div>
         <Router>
           <Header></Header>
           <main>
@@ -24,6 +28,12 @@ function App() {
           </main>
         </Router>
       </div>
+    )
+  }
+
+  return (
+    <NavProvider>
+      <Body />
     </NavProvider>
   )
 }

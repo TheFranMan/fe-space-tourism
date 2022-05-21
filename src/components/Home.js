@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import PAGES from "../pages"
 import { useNavClick } from "../navContext"
 
-const Home = ({handleNavClick}) => {
+const Home = () => {
     const navClick = useNavClick()
 
     return(
         <section className="home" aria-labelledby="home-title">
-            <p className="home__text-top">So, you want to travel to</p>
+            <p className="home__text-top" tabIndex="-1">So, you want to travel to</p>
             <h2 id="home-title" className="home__title">Space</h2>
             <p className="home__body">Let’s face it; if you want to go to space, you might as well genuinely go to
             outer space and not hover kind of on the edge of it. Well sit back, and relax
