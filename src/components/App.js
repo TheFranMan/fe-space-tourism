@@ -24,6 +24,7 @@ function App() {
               <Route path="destination" element={<Destination />} />
               <Route path="crew" element={<Crew />} />
               <Route path="technology" element={<Technology />} />
+              <Route path='*' element={<NotFound />} />
             </Routes>
           </main>
         </Router>
@@ -40,5 +41,6 @@ function App() {
 
 const Crew = () => "Crew"
 const Technology = () => "Technology"
+const NotFound = () => "404 Not Found"
 
 export default App;
