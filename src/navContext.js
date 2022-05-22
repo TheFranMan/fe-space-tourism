@@ -28,7 +28,17 @@ export function useHomeRef() {
 }
 
 export function NavProvider({ children }) {
-    const [page, updatePage] = useState(PAGES.HOME)
+    let currentPage = "not-found"
+    let requestedPage = window.location.pathname.substring(1) || PAGES.HOME
+
+    for (const page in PAGES) {
+        if ( requestedPage === PAGES[page] ) {
+            currentPage = requestedPage
+            break
+        }
+    }
+
+    const [page, updatePage] = useState(currentPage)
     const [isNavOpen, updateIsNavOpen] = useState(false)
     const homeRef = useRef(null)
 
