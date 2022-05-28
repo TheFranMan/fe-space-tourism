@@ -59,13 +59,13 @@ const Destination = () => {
                     </p>
 
                     <div className="stats">
-                        <div className="stats_item">
-                            <h4 className="stats_item__heading">Avg. Distance</h4>
-                            <p className="stats_item__body">384,400 km</p>
+                        <div className="stats__item">
+                            <h4 className="stats__item__heading">Avg. Distance</h4>
+                            <p className="stats__item__body">384,400 km</p>
                         </div>
-                        <div className="stats_item">
-                            <h4 className="stats_item__heading">Est. Travel Time</h4>
-                            <p className="stats_item__body">3 days</p>
+                        <div className="stats__item">
+                            <h4 className="stats__item__heading">Est. Travel Time</h4>
+                            <p className="stats__item__body">3 days</p>
                         </div>
                     </div>
                 </div>
@@ -78,32 +78,32 @@ const Destination = () => {
                     </p>
 
                     <div className="stats">
-                        <div className="stats_item">
-                            <h4 className="stats_item__heading">Avg. Distance</h4>
-                            <p className="stats_item__body">225 Mil. KM</p>
+                        <div className="stats__item">
+                            <h4 className="stats__item__heading">Avg. Distance</h4>
+                            <p className="stats__item__body">225 Mil. KM</p>
                         </div>
-                        <div className="stats_item">
-                            <h4 className="stats_item__heading">Est. Travel Time</h4>
-                            <p className="stats_item__body">9 Months</p>
+                        <div className="stats__item">
+                            <h4 className="stats__item__heading">Est. Travel Time</h4>
+                            <p className="stats__item__body">9 Months</p>
                         </div>
                     </div>
                 </div>
 
                 <div className="destinations__tabs__panel" role="tabpanel" id="europa-tab" aria-labelledby="europa" hidden={ true } ref={ refs.europa.panel }>
                     <img className="panel__img" src={ Europa } alt="" />
-                    <h3 className="panel__body">Europa</h3>
-                    <p className="destinations__body">
+                    <h3 className="panel__title">Europa</h3>
+                    <p className="panel__body">
                         The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.
                     </p>
 
                     <div className="stats">
-                        <div className="stats_item">
-                            <h4 className="stats_item__heading">Avg. Distance</h4>
-                            <p className="stats_item__body">628 mil. km</p>
+                        <div className="stats__item">
+                            <h4 className="stats__item__heading">Avg. Distance</h4>
+                            <p className="stats__item__body">628 mil. km</p>
                         </div>
-                        <div className="stats_item">
-                            <h4 className="stats_item__heading">Est. Travel Time</h4>
-                            <p className="stats_item__body">3 years</p>
+                        <div className="stats__item">
+                            <h4 className="stats__item__heading">Est. Travel Time</h4>
+                            <p className="stats__item__body">3 years</p>
                         </div>
                     </div>
                 </div>
@@ -116,13 +116,13 @@ const Destination = () => {
                     </p>
 
                     <div className="stats">
-                        <div className="stats_item">
-                            <h4 className="stats_item__heading">Avg. Distance</h4>
-                            <p className="stats_item__body">1.6 bil. km</p>
+                        <div className="stats__item">
+                            <h4 className="stats__item__heading"><abbr title="Average">Avg</abbr>. Distance</h4>
+                            <p className="stats__item__body">1.6 bil. km</p>
                         </div>
-                        <div className="stats_item">
-                            <h4 className="stats_item__heading">Est. Travel Time</h4>
-                            <p className="stats_item__body">7 years</p>
+                        <div className="stats__item">
+                            <h4 className="stats__item__heading"><abbr title="Estimate">Est</abbr>. Travel Time</h4>
+                            <p className="stats__item__body">7 years</p>
                         </div>
                     </div>
                 </div>

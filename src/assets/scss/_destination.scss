@@ -24,7 +24,27 @@
                 position: relative;
 
                 &__list {
+                    display: flex;
+                    justify-content: center;
+                    gap: 2.7em;
                     margin-top: 22.8em;
+
+                    *[role="tab"] {
+                        font-family: vars.$ff-secondary;
+                        font-size: 1.4rem;
+                        letter-spacing: .1685714em;
+                        background: inherit;
+                        color: vars.$cl-accent;
+                        border: none;
+                        padding-bottom: 0.57142857em;
+                        border-bottom: solid .2142857em rgba(vars.$cl-secondary, 0);
+
+                        &:hover,
+                        &[aria-selected="true"] {
+                            color: vars.$cl-secondary;
+                            border-bottom: solid .2142857em rgba(vars.$cl-secondary, 1);
+                        }
+                    }
                 }
 
                 &__panel {
@@ -40,6 +60,48 @@
                         transform: translateX(-50%);
                         width: $dimension;
                         height: $dimension;
+                    }
+
+                    .panel__title {
+                        margin-top: .357142857em;
+                        font-family: vars.$ff-accent;
+                        font-weight: 400;
+                        font-size: 5.6rem;
+                        text-transform: uppercase;
+                    }
+
+                    .panel__body {
+                        font-family: vars.$ff-primary;
+                        font-size: 1.5rem;
+                        line-height: 1.666665;
+                        color: vars.$cl-accent;
+                        padding-bottom: 2.133333em;
+                        border-bottom: solid 1px vars.$cl-highlight;
+                    }
+
+                    .stats {
+                        margin-top: 3.2em;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 3.2em;
+
+                        &__item {
+                            text-transform: uppercase;
+
+                            &__heading {
+                                font-family: vars.$ff-secondary;
+                                font-size: 1.4rem;
+                                font-weight: 400;
+                                letter-spacing: .1685715em;
+                                color: vars.$cl-accent;
+                                margin-bottom: .85714em;
+                            }
+
+                            &__body {
+                                font-family: vars.$ff-accent;
+                                font-size: 2.8rem;
+                            }
+                        }
                     }
                 }
             }
