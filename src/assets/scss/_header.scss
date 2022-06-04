@@ -1,3 +1,5 @@
+@use "variables" as vars;
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -7,5 +9,15 @@
         $dimension: 40px;
         width: $dimension;
         height: $dimension;
+    }
+}
+
+@media (min-width: vars.$tablet) {
+    .header {
+        &__logo {
+            $dimension: 48px;
+            width: $dimension;
+            height: $dimension;
+        }
     }
 }

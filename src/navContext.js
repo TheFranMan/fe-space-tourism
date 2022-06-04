@@ -42,7 +42,7 @@ export function NavProvider({ children }) {
     const [isNavOpen, updateIsNavOpen] = useState(false)
     const homeRef = useRef(null)
 
-    function handleNavClick(e, dest, ref) {
+    function handleNavClick(e, dest) {
         document.title = getTitle(dest)
 
         // As React Router does not reset focus when clicking a link, we always change focus to the header logo.
@@ -53,7 +53,7 @@ export function NavProvider({ children }) {
 
         updateIsNavOpen(false)
         updatePage(dest)
-        window.scrollTo(0, 0);
+        window.scrollTo(0, 0)
     }
 
     return (
