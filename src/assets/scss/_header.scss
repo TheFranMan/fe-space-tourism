@@ -22,3 +22,13 @@
         }
     }
 }
+
+@media (min-width: vars.$desktop) {
+    .header {
+        margin-top: 4em;
+
+        &__logo {
+            margin-left: 5.5em;
+        }
+    }
+}

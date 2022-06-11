@@ -51,7 +51,7 @@ body {
 .container {
   // width: minmax(vars.$mobile, vars.$desktop);
   min-width: calc(100vw - 2.4em);
-  max-width: vars.$desktop;
+  // max-width: vars.$desktop;
   margin-inline: auto;
   padding: 2.4em;
   text-align: center;
@@ -100,6 +100,29 @@ body {
 
     &.technology {
       background-image: url("../images/technology/background-technology-tablet.jpg");
+    }
+  }
+}
+
+
+@media (min-width: vars.$desktop) {
+  .container {
+    padding: 0;
+
+    &.home {
+      background-image: url("../images/home/background-home-desktop.jpg");
+    }
+
+    &.destination {
+      background-image: url("../images/destination/background-destination-desktop.jpg");
+    }
+
+    &.crew {
+      background-image: url("../images/crew/background-crew-desktop.jpg");
+    }
+
+    &.technology {
+      background-image: url("../images/technology/background-technology-desktop.jpg");
     }
   }
 }
