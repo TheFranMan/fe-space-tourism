@@ -51,3 +51,40 @@
         margin-bottom: 1.2em;
     }
 }
+
+@media (min-width: vars.$tablet) {
+    .container.home {
+        main {
+            width: 450px;
+            margin: 10.6em auto 9em;
+        }
+    }
+
+    .home {
+        &__text-top {
+            font-size: 2rem;
+        }
+
+        &__title {
+            font-size: 15rem;
+            margin-block: .16em;
+        }
+
+        &__body {
+            font-size: 1.6rem;
+            line-height: 1.75;
+            margin-bottom: 0;
+        }
+
+        &__explore {
+            $dimensions: 242px;
+            height: $dimensions;
+            width: $dimensions;
+            line-height: $dimensions;
+            margin-bottom: 0;
+            margin-top: 4.875em;
+            font-size: 3.2rem;
+            letter-spacing: 2px;
+        }
+    }
+}

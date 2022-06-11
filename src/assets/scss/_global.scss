@@ -84,6 +84,22 @@ body {
 
 @media (min-width: vars.$tablet) {
   .container {
-    padding-inline: 3.9em;
+    padding: 0;
+
+    &.home {
+      background-image: url("../images/home/background-home-tablet.jpg");
+    }
+
+    &.destination {
+      background-image: url("../images/destination/background-destination-tablet.jpg");
+    }
+
+    &.crew {
+      background-image: url("../images/crew/background-crew-tablet.jpg");
+    }
+
+    &.technology {
+      background-image: url("../images/technology/background-technology-tablet.jpg");
+    }
   }
 }
