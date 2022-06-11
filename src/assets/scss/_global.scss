@@ -76,6 +76,10 @@ body {
   &.technology {
     background-image: url("../images/technology/background-technology-mobile.jpg");
   }
+
+  &.stop-transistions * {
+    transition: none !important;
+  }
 }
 
 @media (min-width: vars.$tablet) {

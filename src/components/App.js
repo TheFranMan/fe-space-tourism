@@ -1,9 +1,11 @@
+import { useState } from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Header from "./Header"
 import Home from "./Home"
 import Destination from "./Destination"
 import "../assets/scss/main.scss"
 import { NavProvider, usePage } from "../navContext"
+import { useEffect } from "react"
 
 
 function App() {
@@ -11,8 +13,21 @@ function App() {
   const Body = () => {
     let page = usePage()
 
+    let [resizing, updateResizing] = useState(false)
+
+    useEffect(() => {
+      window.addEventListener('resize', () => {
+        updateResizing(true)
+        clearTimeout(window.resizedFinished);
+
+          window.resizedFinished = setTimeout(() => {
+            updateResizing(false)
+        }, 250);
+      });
+    }, [])
+
     return (
-      <div className={ `container ${page}` }>
+      <div className={ `container ${page}${resizing ? " stop-transistions" : ""}`}>
         <div className="sr-only" aria-live="polite" aria-atomic="true">
           The { page } page has loaded
         </div>
