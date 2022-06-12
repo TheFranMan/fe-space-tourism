@@ -88,3 +88,48 @@
         }
     }
 }
+
+
+@media (min-width: vars.$desktop) {
+    .container.home {
+        main {
+            margin: 0;
+            width: 100%;
+            text-align: left;
+
+            .home {
+                display: grid;
+                grid-template-columns: 450px 242px;
+                margin-top: 25.1em;
+                justify-content: center;
+                column-gap: 38.6em;
+
+                & > * {
+                    grid-column: 1 / 2;
+                }
+
+                &__text-top {
+                    font-size: 2.8rem;
+                }
+
+                &__title {
+                    font-size: 15rem;
+                    margin-block: .16em;
+                }
+
+                &__body {
+                    font-size: 1.8rem;
+                    line-height: 1.77777775;
+                }
+
+                &__explore {
+                    grid-column: 2 / -1;
+                    grid-row: 1 / 4;
+                    text-align: center;
+                    margin-top: 3.375em;
+                }
+            }
+        }
+    }
+
+}
