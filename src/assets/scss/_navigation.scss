@@ -136,6 +136,12 @@
                         display: none;
                     }
 
+                    &:not([aria-current="page"]):focus::before,
+                    &:not([aria-current="page"]):hover::before {
+                        opacity: .5;
+                    }
+
+                    &:focus::before,
                     &:hover::before,
                     &[aria-current="page"]::before {
                         content: "";
@@ -170,6 +176,7 @@
                         letter-spacing: 2.7px;
                     }
 
+                    &:focus::before,
                     &:hover::before,
                     &[aria-current="page"]::before {
                         bottom: calc(0% - 2.5em);

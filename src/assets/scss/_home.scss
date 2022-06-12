@@ -127,6 +127,13 @@
                     grid-row: 1 / 4;
                     text-align: center;
                     margin-top: 3.375em;
+                    outline: 0 solid rgba(vars.$cl-secondary, .1);
+                    transition: outline .1s linear;
+
+                    &:focus,
+                    &:hover {
+                        outline: 88px solid rgba(vars.$cl-secondary, .1);
+                    }
                 }
             }
         }
