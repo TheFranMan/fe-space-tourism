@@ -55,7 +55,6 @@ body {
 .container {
   // width: minmax(vars.$mobile, vars.$desktop);
   min-width: calc(100vw - 2.4em);
-  // max-width: vars.$desktop;
   height: 100vh;
   margin-inline: auto;
   padding: 2.4em;
@@ -63,6 +62,7 @@ body {
   font-family: vars.$ff-primary;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: bottom;
   overflow-x: hidden;
   position: relative;
 
