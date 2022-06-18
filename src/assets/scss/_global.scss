@@ -38,6 +38,10 @@ body {
   height: 100vh;
 }
 
+main {
+  margin-top: 2.4em;
+}
+
 .sr-only {
 	border: 0 !important;
 	clip: rect(1px, 1px, 1px, 1px) !important;
@@ -91,6 +95,10 @@ body {
 }
 
 @media (min-width: vars.$tablet) {
+  main {
+    margin-top: 4em;
+  }
+
   .container-outer {
     &.home {
       background-image: url("../images/home/background-home-tablet.jpg");

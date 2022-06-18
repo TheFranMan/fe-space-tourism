@@ -1,0 +1,67 @@
+@use "variables" as vars;
+
+.container-outer.crew {
+    main  {
+        .crew {
+            &__tabs {
+                margin-top: 25.5em;
+                position: relative;
+
+                &__list {
+                    display: flex;
+                    justify-content: center;
+                    gap: 1.6em;
+                    padding-block: 3.2em;
+                    border-top: 1px solid rgba(vars.$cl-secondary, .2);
+
+                    *[role="tab"] {
+                        $dimension: 10px;
+                        width: $dimension;
+                        height: $dimension;
+                        border-radius: 50%;
+                        border: none;
+                        opacity: .2;
+
+                        &[aria-selected="true"] {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                &__panel {
+                    .panel__title {
+                        font-family: vars.$ff-accent;
+                        font-weight: 400;
+                        font-size: 1.6rem;
+                        text-transform: uppercase;
+                        opacity: .5;
+                        margin-bottom: .5em;
+                    }
+
+                    .panel__name {
+                        font-family: vars.$ff-accent;
+                        font-weight: 400;
+                        font-size: 2.4rem;
+                        text-transform: uppercase;
+                    }
+
+                    .panel__img {
+                        height: 223px;
+                        position: absolute;
+                        bottom: 100%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+
+                    .panel__body {
+                        font-family: vars.$ff-primary;
+                        font-size: 1.5rem;
+                        line-height: 1.666665;
+                        color: vars.$cl-accent;
+                        margin: 1.06666666667em 0 6.93333333333em;
+                    }
+                }
+            }
+        }
+    }
+}

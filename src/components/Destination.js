@@ -40,8 +40,8 @@ const Destination = () => {
     // Todo: remove display none from the panels and replace it with a z-index
 
     return (
-        <section className="destinations" aria-labelledby="destintion-title">
-            <h2 className="destinations__title" id="destintion-title" tabIndex="-1"><span>01</span>Pick your destination</h2>
+        <section className="destinations details" aria-labelledby="destintion-title">
+            <h2 className="details__title" id="destintion-title" tabIndex="-1"><span>01</span>Pick your destination</h2>
 
             <div className="destinations__tabs">
                 <div className="destinations__tabs__list" role="tabslist" aria-label="destinations">

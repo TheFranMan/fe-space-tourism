@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Header from "./Header"
 import Home from "./Home"
 import Destination from "./Destination"
+import Crew from "./Crew"
 import "../assets/scss/main.scss"
 import { NavProvider, usePage } from "../navContext"
 import { useEffect } from "react"
@@ -56,7 +57,6 @@ function App() {
   )
 }
 
-const Crew = () => "Crew"
 const Technology = () => "Technology"
 const NotFound = () => "404 Not Found"
 

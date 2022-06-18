@@ -1,0 +1,41 @@
+@use "variables" as vars;
+
+.details {
+    &__title {
+        font-family: vars.$ff-secondary;
+        font-size: 1.6rem;
+        letter-spacing: .16875em;
+        text-transform: uppercase;
+        font-weight: 400;
+
+        span {
+            font-weight: 700;
+            color: vars.$cl-secondary;
+            opacity: .25;
+            margin-right: 1.125em;
+        }
+    }
+}
+
+
+@media (min-width: vars.$tablet) {
+    .details {
+        &__title {
+            margin-left: 2em;
+            text-align: left;
+            font-size: 2rem;
+            letter-spacing: 3.38px;
+        }
+    }
+}
+
+
+@media (min-width: vars.$desktop) {
+    .destinations {
+        &__title {
+            margin: 2.71428571429em 0 0 5.94642857143em;
+            font-size: 2.8rem;
+            letter-spacing: 0.16857142857em;
+        }
+    }
+}
