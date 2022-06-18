@@ -1,6 +1,6 @@
 @use "variables" as vars;
 
-.container.home {
+.container-outer.home {
     main {
         margin-top: 4.8em;
     }
@@ -53,7 +53,7 @@
 }
 
 @media (min-width: vars.$tablet) {
-    .container.home {
+    .container-outer.home {
         main {
             width: 450px;
             margin: 10.6em auto 9em;
@@ -91,7 +91,7 @@
 
 
 @media (min-width: vars.$desktop) {
-    .container.home {
+    .container-outer.home {
         main {
             margin: 0;
             width: 100%;

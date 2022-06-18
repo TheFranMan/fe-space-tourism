@@ -27,22 +27,24 @@ function App() {
     }, [])
 
     return (
-      <div className={ `container ${page}${resizing ? " stop-transistions" : ""}`}>
-        <div className="sr-only" aria-live="polite" aria-atomic="true">
-          The { page } page has loaded
+      <div className={ `container-outer ${page}${resizing ? " stop-transistions" : ""}`}>
+        <div className={ `container`}>
+          <div className="sr-only" aria-live="polite" aria-atomic="true">
+            The { page } page has loaded
+          </div>
+          <Router>
+            <Header></Header>
+            <main>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="destination" element={<Destination />} />
+                <Route path="crew" element={<Crew />} />
+                <Route path="technology" element={<Technology />} />
+                <Route path='*' element={<NotFound />} />
+              </Routes>
+            </main>
+          </Router>
         </div>
-        <Router>
-          <Header></Header>
-          <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="destination" element={<Destination />} />
-              <Route path="crew" element={<Crew />} />
-              <Route path="technology" element={<Technology />} />
-              <Route path='*' element={<NotFound />} />
-            </Routes>
-          </main>
-        </Router>
       </div>
     )
   }

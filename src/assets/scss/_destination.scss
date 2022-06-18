@@ -1,6 +1,6 @@
 @use "variables" as vars;
 
-.container.destination {
+.container-outer.destination {
     main  {
         margin-top: 2.4em;
 
@@ -110,7 +110,7 @@
 }
 
 @media (min-width: vars.$tablet) {
-    .container.destination {
+    .container-outer.destination {
         main {
             .destinations {
                 &__title {
@@ -167,6 +167,70 @@
                             flex-direction: row;
                             justify-content: center;
                             gap: 4em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: vars.$desktop) {
+    .container-outer.destination {
+        main {
+            .destinations {
+                &__title {
+                    margin: 2.71428571429em 0 0 5.94642857143em;
+                    font-size: 2.8rem;
+                    letter-spacing: 0.16857142857em;
+                }
+
+                &__tabs {
+                    width: 445px;
+                    margin-left: 83.2em;
+
+                    &__list {
+                        justify-content: flex-start;
+                        margin-top: 0;
+                        margin-top: 6.4em;
+                    }
+
+                    &__panel {
+                        text-align: left;
+
+                        .panel__title {
+                            font-size: 10rem;
+                            margin-top: 0.37em;
+                        }
+
+                        .panel__body {
+                            font-size: 1.8rem;
+                            line-height: 1.77777777778em;
+                            margin-top: 0.77777777777em;
+                            padding-bottom: 3em;
+                        }
+
+                        .panel__img {
+                            $dimension: 445px;
+                            width: $dimension;
+                            height: $dimension;
+                            top: calc(0% + 3.9em);
+                            left: auto;
+                            bottom: auto;
+                            right: calc(100% + 15.7em);
+                            transform: none;
+                        }
+
+                        .panel__body,
+                        .stats {
+                            width: inherit;
+                        }
+
+                        .stats {
+                            margin-top: 2.8em;
+                            justify-content: flex-start;
+                            gap: 7.9em;
                         }
                     }
                 }
