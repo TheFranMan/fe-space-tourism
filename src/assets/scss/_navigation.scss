@@ -61,6 +61,7 @@
 
         &__item {
             margin-bottom: 3.2em;
+            position: relative;
 
             &__link {
                 color: vars.$cl-secondary;
@@ -73,6 +74,21 @@
                 .num {
                     font-weight: 700;
                     margin-right: .75em;
+                }
+
+                &:focus::before,
+                &[aria-current="page"]::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 100%;
+                    width: 3px;
+                    background-color: white;
+                }
+
+                &:not([aria-current="page"]):focus::before {
+                    opacity: .2;
                 }
             }
         }
@@ -131,6 +147,10 @@
                     font-family: vars.$ff-secondary;
                     font-size: 1.4rem;
                     letter-spacing: .1685715em;
+    
+                    &:not([aria-current="page"]):focus::before {
+                        opacity: .2;
+                    }
 
                     .num {
                         display: none;
@@ -146,6 +166,8 @@
                     &[aria-current="page"]::before {
                         content: "";
                         position: absolute;
+                        top: auto;
+                        right: auto;
                         height: 3px;
                         width: 100%;
                         background-color: vars.$cl-secondary;
