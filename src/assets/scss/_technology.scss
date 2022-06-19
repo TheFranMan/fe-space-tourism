@@ -1,0 +1,77 @@
+@use "variables" as vars;
+
+.container-outer.technology {
+    .container {
+        // padding: 0;
+    }
+
+    main  {
+        .technology {
+            &__tabs {
+                margin-top: 23.6em;
+                position: relative;
+
+                &__list {
+                    display: flex;
+                    justify-content: center;
+                    gap: 1.6em;
+                    margin-bottom: 2.6em;
+
+                    *[role="tab"] {
+                        $dimension: 40px;
+                        width: $dimension;
+                        height: $dimension;
+                        border-radius: 50%;
+                        border: solid 1px rgba(vars.$cl-secondary, .2);
+                        font-size: 1.6rem;
+                        line-height: 1.6em;
+                        background-color: vars.$cl-primary;
+                        color: vars.$cl-secondary;
+
+                        &:focus,
+                        &[aria-selected="true"] {
+                            background-color: vars.$cl-secondary;
+                            color: vars.$cl-primary;
+                        }
+                    }
+                }
+
+                &__panel {
+                    .panel__terminology {
+                        font-family: vars.$ff-secondary;
+                        font-weight: 400;
+                        font-size: 1.4rem;
+                        text-transform: uppercase;
+                        margin-bottom: 0.64285714285em;
+                        color: vars.$cl-accent;
+                        letter-spacing: 0.16857142857em;
+                    }
+
+                    .panel__name {
+                        font-family: vars.$ff-accent;
+                        font-weight: 400;
+                        font-size: 2.4rem;
+                        text-transform: uppercase;
+                    }
+
+                    .panel__img {
+                        position: absolute;
+                        bottom: calc(100% + 2.4em);
+                        left: calc(0% - 2.4em);
+                        // max-width: 375px;
+                        max-width: 100vw;
+                        height: 170px;
+                    }
+
+                    .panel__body {
+                        font-family: vars.$ff-primary;
+                        font-size: 1.5rem;
+                        line-height: 1.666665;
+                        color: vars.$cl-accent;
+                        margin: 1.06666666667em 0 6.93333333333em;
+                    }
+                }
+            }
+        }
+    }
+}

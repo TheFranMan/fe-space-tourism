@@ -4,6 +4,7 @@ import Header from "./Header"
 import Home from "./Home"
 import Destination from "./Destination"
 import Crew from "./Crew"
+import Technology from "./Technology"
 import "../assets/scss/main.scss"
 import { NavProvider, usePage } from "../navContext"
 import { useEffect } from "react"
@@ -57,7 +58,6 @@ function App() {
   )
 }
 
-const Technology = () => "Technology"
 const NotFound = () => "404 Not Found"
 
 export default App;
