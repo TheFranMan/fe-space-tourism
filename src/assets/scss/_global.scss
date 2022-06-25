@@ -21,6 +21,10 @@ select {
   font: inherit;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 html,
 body {
     height: 100%;
