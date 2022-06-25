@@ -75,3 +75,56 @@
         }
     }
 }
+
+
+
+@media (min-width: vars.$tablet) {
+    .container-outer.technology {
+        main  {
+            .technology {
+                &__tabs {
+                    // display: flex;
+                    // flex-direction: column;
+                    // position: static;
+                    margin-top: 42.6em;
+
+                    &__list {
+                        *[type="button"] {
+                            $dimension: 2.5em;
+                            height: $dimension;
+                            width: $dimension;
+                            font-size: 2.4rem;
+                        }
+                    }
+
+                    &__panel {
+                        margin-top: 4.4em;
+
+                        .panel__terminology {
+                            font-size: 1.6rem;
+                            margin-bottom: 1em;
+                        }
+
+                        .panel__name {
+                            font-size: 4rem;
+                        }
+
+                        .panel__body {
+                            font-size: 1.6rem;
+                            line-height: 1.75em;
+                            max-width: 458px;
+                            margin: 1em auto 0 auto;
+                        }
+
+                        .panel__img {
+                            height: 310px;
+                            width: 786px;
+                            left: auto;
+                            bottom: calc(100% + 5.6em);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
