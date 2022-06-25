@@ -3,6 +3,7 @@ import Moon from "../assets/images/destination/image-moon.webp"
 import Mars from "../assets/images/destination/image-mars.webp"
 import Europa from "../assets/images/destination/image-europa.webp"
 import Titan from "../assets/images/destination/image-titan.webp"
+import { tabClickHandler, tabPressHandler } from "../tabs"
 
 const Destination = () => {
     let refs = {
@@ -24,34 +25,19 @@ const Destination = () => {
         },
     }
 
-    const tabClickHandler = (tab) => {
-        for (let ref in refs) {
-            if ( ref === tab ) {
-                refs[ref].tab.current.setAttribute("aria-selected", true)
-                refs[ref].panel.current.removeAttribute("hidden")
-                continue
-            }
-
-            refs[ref].tab.current.setAttribute("aria-selected", false)
-            refs[ref].panel.current.setAttribute("hidden", true)
-        }
-    }
-
-    // Todo: remove display none from the panels and replace it with a z-index
-
     return (
         <section className="destinations details" aria-labelledby="destintion-title">
             <h2 className="details__title" id="destintion-title" tabIndex="-1"><span>01</span>Pick your destination</h2>
 
             <div className="destinations__tabs">
                 <div className="destinations__tabs__list" role="tabslist" aria-label="destinations">
-                    <button id="moon" type="button" role="tab" aria-selected="true" aria-controls="moon-tab" ref={ refs.moon.tab } onClick={ () => tabClickHandler("moon") }>Moon</button>
-                    <button id="mars" type="button" role="tab" aria-selected="false" aria-controls="mars-tab" ref={ refs.mars.tab } onClick={ () => tabClickHandler("mars") }>Mars</button>
-                    <button id="europa" type="button" role="tab" aria-selected="false" aria-controls="europa-tab" ref={ refs.europa.tab } onClick={ () => tabClickHandler("europa") }>Europa</button>
-                    <button id="titan" type="button" role="tab" aria-selected="false" aria-controls="titan-tab" ref={ refs.titan.tab } onClick={ () => tabClickHandler("titan") }>Titan</button>
+                    <button id="moon" type="button" role="tab" aria-selected="true" aria-controls="moon-tab" tabIndex="0" ref={ refs.moon.tab } onKeyDown={ (e) => tabPressHandler(e, "moon", refs) } onClick={ () => tabClickHandler("moon", refs) }>Moon</button>
+                    <button id="mars" type="button" role="tab" aria-selected="false" aria-controls="mars-tab" tabIndex="-1" ref={ refs.mars.tab } onKeyDown={ (e) => tabPressHandler(e, "mars", refs) } onClick={ () => tabClickHandler("mars", refs) }>Mars</button>
+                    <button id="europa" type="button" role="tab" aria-selected="false" aria-controls="europa-tab" tabIndex="-1" ref={ refs.europa.tab } onKeyDown={ (e) => tabPressHandler(e, "europa", refs) } onClick={ () => tabClickHandler("europa", refs) }>Europa</button>
+                    <button id="titan" type="button" role="tab" aria-selected="false" aria-controls="titan-tab" tabIndex="-1" ref={ refs.titan.tab } onKeyDown={ (e) => tabPressHandler(e, "titan", refs) } onClick={ () => tabClickHandler("titan", refs) }>Titan</button>
                 </div>
 
-                <div className="destinations__tabs__panel lala" role="tabpanel" id="moon-tab" aria-labelledby="moon" ref={ refs.moon.panel }>
+                <div className="destinations__tabs__panel lala" role="tabpanel" id="moon-tab" aria-labelledby="moon" tabIndex="0" ref={ refs.moon.panel }>
                     <img className="panel__img" src={ Moon } alt="" />
                     <h3 className="panel__title">Moon</h3>
                     <p className="panel__body">
@@ -70,7 +56,7 @@ const Destination = () => {
                     </div>
                 </div>
 
-                <div className="destinations__tabs__panel lala" role="tabpanel" id="mars-tab" aria-labelledby="mars" hidden={ true } ref={ refs.mars.panel }>
+                <div className="destinations__tabs__panel lala" role="tabpanel" id="mars-tab" aria-labelledby="mars" tabIndex="0" hidden={ true } ref={ refs.mars.panel }>
                     <img className="panel__img" src={ Mars } alt="" />
                     <h3 className="panel__title">Mars</h3>
                     <p className="panel__body">
@@ -89,7 +75,7 @@ const Destination = () => {
                     </div>
                 </div>
 
-                <div className="destinations__tabs__panel" role="tabpanel" id="europa-tab" aria-labelledby="europa" hidden={ true } ref={ refs.europa.panel }>
+                <div className="destinations__tabs__panel" role="tabpanel" id="europa-tab" aria-labelledby="europa" tabIndex="0" hidden={ true } ref={ refs.europa.panel }>
                     <img className="panel__img" src={ Europa } alt="" />
                     <h3 className="panel__title">Europa</h3>
                     <p className="panel__body">
@@ -108,7 +94,7 @@ const Destination = () => {
                     </div>
                 </div>
 
-                <div className="destinations__tabs__panel" role="tabpanel" id="titan-tab" aria-labelledby="titan" hidden={ true } ref={ refs.titan.panel }>
+                <div className="destinations__tabs__panel" role="tabpanel" id="titan-tab" aria-labelledby="titan" tabIndex="0" hidden={ true } ref={ refs.titan.panel }>
                     <img className="panel__img" src={ Titan } alt="" />
                     <h3 className="panel__title">Titan</h3>
                     <p className="panel__body">

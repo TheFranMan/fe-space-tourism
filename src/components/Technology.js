@@ -1,4 +1,5 @@
 import { useRef } from "react"
+import { tabClickHandler, tabPressHandler } from "../tabs"
 
 const Technology = () => {
     let refs = {
@@ -16,33 +17,55 @@ const Technology = () => {
         },
     }
 
-    const tabClickHandler = (tab) => {
-        for (let ref in refs) {
-            if ( ref === tab ) {
-                refs[ref].tab.current.setAttribute("aria-selected", true)
-                refs[ref].panel.current.removeAttribute("hidden")
-                continue
-            }
-
-            refs[ref].tab.current.setAttribute("aria-selected", false)
-            refs[ref].panel.current.setAttribute("hidden", true)
-        }
-    }
-
-    // Todo: remove display none from the panels and replace it with a z-index
-
     return (
         <section className="technology details" aria-labelledby="technology-title">
             <h2 className="details__title" id="technology-title" tabIndex="-1"><span>03</span>Space launch 101</h2>
 
             <div className="technology__tabs">
                 <div className="technology__tabs__list" role="tabslist" aria-label="technology">
-                    <button id="vehicle" type="button" role="tab" aria-selected="true" aria-controls="vehicle-tab" ref={ refs.vehicle.tab } onClick={ () => tabClickHandler("vehicle") }>1</button>
-                    <button id="spaceport" type="button" role="tab" aria-selected="false" aria-controls="spaceport-tab" ref={ refs.spaceport.tab } onClick={ () => tabClickHandler("spaceport") }>2</button>
-                    <button id="capsule" type="button" role="tab" aria-selected="false" aria-controls="capsule-tab" ref={ refs.capsule.tab } onClick={ () => tabClickHandler("capsule") }>3</button>
+                    <button
+                        id="vehicle"
+                        type="button"
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="vehicle-tab"
+                        ref={ refs.vehicle.tab }
+                        tabIndex="0"
+                        onKeyDown={ (e) => tabPressHandler(e, "vehicle", refs) }
+                        onClick={ () => tabClickHandler("vehicle", refs) }
+                    >1</button>
+                    <button
+                        id="spaceport"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="spaceport-tab"
+                        ref={ refs.spaceport.tab }
+                        tabIndex="-1"
+                        onKeyDown={ (e) => tabPressHandler(e, "spaceport", refs) }
+                        onClick={ () => tabClickHandler("spaceport", refs) }
+                    >2</button>
+                    <button
+                        id="capsule"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="capsule-tab"
+                        ref={ refs.capsule.tab }
+                        tabIndex="-1"
+                        onKeyDown={ (e) => tabPressHandler(e, "capsule", refs) }
+                        onClick={ () => tabClickHandler("capsule", refs) }
+                    >3</button>
                 </div>
 
-                <div className="technology__tabs__panel lala" role="tabpanel" id="vehicle-tab" aria-labelledby="vehicle" ref={ refs.vehicle.panel }>
+                <div
+                    className="technology__tabs__panel lala"
+                    role="tabpanel"
+                    id="vehicle-tab"
+                    aria-labelledby="vehicle"
+                    tabIndex="0"
+                    ref={ refs.vehicle.panel }
+                >
                     <div className="panel__img vehicle"></div>
                     <p className="panel__terminology">THE TERMINOLOGY…</p>
                     <h3 className="panel__name">LAUNCH VEHICLE</h3>
@@ -51,7 +74,15 @@ const Technology = () => {
                     </p>
                 </div>
 
-                <div className="technology__tabs__panel" role="tabpanel" id="spaceport-tab" aria-labelledby="spaceport" hidden={ true } ref={ refs.spaceport.panel }>
+                <div
+                    className="technology__tabs__panel"
+                    role="tabpanel"
+                    id="spaceport-tab"
+                    aria-labelledby="spaceport"
+                    tabIndex="0"
+                    hidden={ true }
+                    ref={ refs.spaceport.panel }
+                >
                     <div className="panel__img spaceport"></div>
                     <p className="panel__terminology">THE TERMINOLOGY…</p>
                     <h3 className="panel__name">SPACEPORT</h3>
@@ -60,7 +91,15 @@ const Technology = () => {
                     </p>
                 </div>
 
-                <div className="technology__tabs__panel" role="tabpanel" id="capsule-tab" aria-labelledby="capsule" hidden={ true } ref={ refs.capsule.panel }>
+                <div
+                    className="technology__tabs__panel"
+                    role="tabpanel"
+                    id="capsule-tab"
+                    aria-labelledby="capsule"
+                    tabIndex="0"
+                    hidden={ true }
+                    ref={ refs.capsule.panel }
+                >
                     <div className="panel__img capsule"></div>
                     <p className="panel__terminology">THE TERMINOLOGY…</p>
                     <h3 className="panel__name">SPACE CAPSULE</h3>

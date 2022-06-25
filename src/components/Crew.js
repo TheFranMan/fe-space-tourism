@@ -3,6 +3,7 @@ import Commander from "../assets/images/crew/image-douglas-hurley.webp"
 import Engineer from "../assets/images/crew/image-anousheh-ansari.webp"
 import Specialist from "../assets/images/crew/image-mark-shuttleworth.webp"
 import Pilot from "../assets/images/crew/image-victor-glover.webp"
+import { tabClickHandler, tabPressHandler } from "../tabs"
 
 const Crew = () => {
     let refs = {
@@ -24,34 +25,66 @@ const Crew = () => {
         },
     }
 
-    const tabClickHandler = (tab) => {
-        for (let ref in refs) {
-            if ( ref === tab ) {
-                refs[ref].tab.current.setAttribute("aria-selected", true)
-                refs[ref].panel.current.removeAttribute("hidden")
-                continue
-            }
-
-            refs[ref].tab.current.setAttribute("aria-selected", false)
-            refs[ref].panel.current.setAttribute("hidden", true)
-        }
-    }
-
-    // Todo: remove display none from the panels and replace it with a z-index
-
     return (
         <section className="crew details" aria-labelledby="crew-title">
             <h2 className="details__title" id="crew-title" tabIndex="-1"><span>02</span>Meet your crew</h2>
 
             <div className="crew__tabs">
                 <div className="crew__tabs__list" role="tabslist" aria-label="crew">
-                    <button id="commander" type="button" role="tab" aria-selected="true" aria-controls="commander-tab" ref={ refs.commander.tab } onClick={ () => tabClickHandler("commander") }></button>
-                    <button id="specialist" type="button" role="tab" aria-selected="false" aria-controls="specialist-tab" ref={ refs.specialist.tab } onClick={ () => tabClickHandler("specialist") }></button>
-                    <button id="pilot" type="button" role="tab" aria-selected="false" aria-controls="pilot-tab" ref={ refs.pilot.tab } onClick={ () => tabClickHandler("pilot") }></button>
-                    <button id="engineer" type="button" role="tab" aria-selected="false" aria-controls="engineer-tab" ref={ refs.engineer.tab } onClick={ () => tabClickHandler("engineer") }></button>
+                    <button
+                        id="commander"
+                        type="button"
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="commander-tab"
+                        ref={ refs.commander.tab }
+                        tabIndex="0"
+                        onKeyDown={ (e) => tabPressHandler(e, "commander", refs) }
+                        onClick={ () => tabClickHandler("commander", refs) }
+                    ></button>
+                    <button
+                        id="specialist"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="specialist-tab"
+                        ref={ refs.specialist.tab }
+                        tabIndex="-1"
+                        onKeyDown={ (e) => tabPressHandler(e, "specialist", refs) }
+                        onClick={ () => tabClickHandler("specialist", refs) }
+                    ></button>
+                    <button
+                        id="pilot"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="pilot-tab"
+                        ref={ refs.pilot.tab }
+                        tabIndex="-1"
+                        onKeyDown={ (e) => tabPressHandler(e, "pilot", refs) }
+                        onClick={ () => tabClickHandler("pilot", refs) }
+                    ></button>
+                    <button
+                        id="engineer"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="engineer-tab"
+                        ref={ refs.engineer.tab }
+                        tabIndex="-1"
+                        onKeyDown={ (e) => tabPressHandler(e, "engineer", refs) }
+                        onClick={ () => tabClickHandler("engineer", refs)}
+                    ></button>
                 </div>
 
-                <div className="crew__tabs__panel lala" role="tabpanel" id="commander-tab" aria-labelledby="commander" ref={ refs.commander.panel }>
+                <div
+                    className="crew__tabs__panel lala"
+                    role="tabpanel"
+                    id="commander-tab"
+                    tabIndex="0"
+                    aria-labelledby="commander"
+                    ref={ refs.commander.panel }
+                >
                     <img className="panel__img" src={ Commander } alt="" />
                     <h3 className="panel__title">Commander</h3>
                     <h3 className="panel__name">Douglas Hurley</h3>
@@ -60,7 +93,15 @@ const Crew = () => {
                     </p>
                 </div>
 
-                <div className="crew__tabs__panel" role="tabpanel" id="specialist-tab" aria-labelledby="specialist" hidden={ true } ref={ refs.specialist.panel }>
+                <div
+                    className="crew__tabs__panel"
+                    role="tabpanel"
+                    id="specialist-tab"
+                    tabIndex="0"
+                    aria-labelledby="specialist"
+                    hidden={ true }
+                    ref={ refs.specialist.panel }
+                >
                     <img className="panel__img" src={ Specialist } alt="" />
                     <h3 className="panel__title">Specialist</h3>
                     <h3 className="panel__name">MARK SHUTTLEWORTH</h3>
@@ -69,7 +110,15 @@ const Crew = () => {
                     </p>
                 </div>
 
-                <div className="crew__tabs__panel" role="tabpanel" id="pilot-tab" aria-labelledby="pilot" hidden={ true } ref={ refs.pilot.panel }>
+                <div
+                    className="crew__tabs__panel"
+                    role="tabpanel"
+                    id="pilot-tab"
+                    tabIndex="0"
+                    aria-labelledby="pilot"
+                    hidden={ true }
+                    ref={ refs.pilot.panel }
+                >
                     <img className="panel__img" src={ Pilot } alt="" />
                     <h3 className="panel__title">Pilot</h3>
                     <h3 className="panel__name">Victor Glover</h3>
@@ -78,7 +127,15 @@ const Crew = () => {
                     </p>
                 </div>
 
-                <div className="crew__tabs__panel" role="tabpanel" id="engineer-tab" aria-labelledby="engineer" hidden={ true } ref={ refs.engineer.panel }>
+                <div
+                    className="crew__tabs__panel"
+                    role="tabpanel"
+                    id="engineer-tab"
+                    tabIndex="0"
+                    aria-labelledby="engineer"
+                    hidden={ true }
+                    ref={ refs.engineer.panel }
+                >
                     <img className="panel__img" src={ Engineer } alt="" />
                     <h3 className="panel__title">Flight Engineer</h3>
                     <h3 className="panel__name">Anousheh Ansari</h3>
