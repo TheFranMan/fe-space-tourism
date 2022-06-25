@@ -111,3 +111,54 @@
         }
     }
 }
+
+
+@media (min-width: vars.$desktop) {
+    .container-outer.crew {
+        position: relative;
+
+        main  {
+            .crew {
+                text-align: left;
+                &__tabs {
+                    max-width: 614px;
+                    margin-top: 15.4em;
+
+                    &__list {
+                        justify-content: flex-start;
+                        margin-top: 12em;
+
+                        *[role="tab"] {
+                            $dimension: 15px;
+                            width: $dimension;
+                            height: $dimension;
+                        }
+                    }
+
+                    &__panel {
+                        .panel__title {
+                            font-size: 3.2rem;
+                            margin-bottom: 0.46875em;
+                        }
+
+                        .panel__name {
+                            font-size: 5.6rem;
+                        }
+
+                        .panel__body {
+                            font-size: 1.8rem;
+                            line-height: 1.77777777778em;
+                            margin: 1.5em 0 0 0;
+                        }
+
+                        .panel__img {
+                            height: 681px;
+                            left: 55%;
+                            transform: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
