@@ -1,7 +1,4 @@
 import { useRef } from "react"
-import Vehicle from "../assets/images/technology/image-launch-vehicle-landscape.jpg"
-import Spaceport from "../assets/images/technology/image-spaceport-landscape.jpg"
-import Capsule from "../assets/images/technology/image-space-capsule-landscape.jpg"
 
 const Technology = () => {
     let refs = {
@@ -46,7 +43,7 @@ const Technology = () => {
                 </div>
 
                 <div className="technology__tabs__panel lala" role="tabpanel" id="vehicle-tab" aria-labelledby="vehicle" ref={ refs.vehicle.panel }>
-                    <img className="panel__img" src={ Vehicle } alt="" />
+                    <div className="panel__img vehicle"></div>
                     <p className="panel__terminology">THE TERMINOLOGY…</p>
                     <h3 className="panel__name">LAUNCH VEHICLE</h3>
                     <p className="panel__body">
@@ -55,7 +52,7 @@ const Technology = () => {
                 </div>
 
                 <div className="technology__tabs__panel" role="tabpanel" id="spaceport-tab" aria-labelledby="spaceport" hidden={ true } ref={ refs.spaceport.panel }>
-                    <img className="panel__img" src={ Spaceport } alt="" />
+                    <div className="panel__img spaceport"></div>
                     <p className="panel__terminology">THE TERMINOLOGY…</p>
                     <h3 className="panel__name">SPACEPORT</h3>
                     <p className="panel__body">
@@ -64,7 +61,7 @@ const Technology = () => {
                 </div>
 
                 <div className="technology__tabs__panel" role="tabpanel" id="capsule-tab" aria-labelledby="capsule" hidden={ true } ref={ refs.capsule.panel }>
-                    <img className="panel__img" src={ Capsule } alt="" />
+                    <div className="panel__img capsule"></div>
                     <p className="panel__terminology">THE TERMINOLOGY…</p>
                     <h3 className="panel__name">SPACE CAPSULE</h3>
                     <p className="panel__body">
