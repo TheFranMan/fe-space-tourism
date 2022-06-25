@@ -95,6 +95,7 @@
 
         &:focus-within {
             transform: translateX(0);
+            transition: none;
         }
     }
 
