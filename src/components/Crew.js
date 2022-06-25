@@ -86,7 +86,7 @@ const Crew = () => {
                     ref={ refs.commander.panel }
                 >
                     <img className="panel__img" src={ Commander } alt="" />
-                    <h3 className="panel__title">Commander</h3>
+                    <p className="panel__title">Commander</p>
                     <h3 className="panel__name">Douglas Hurley</h3>
                     <p className="panel__body">
                         Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.
@@ -103,7 +103,7 @@ const Crew = () => {
                     ref={ refs.specialist.panel }
                 >
                     <img className="panel__img" src={ Specialist } alt="" />
-                    <h3 className="panel__title">Specialist</h3>
+                    <p className="panel__title">Specialist</p>
                     <h3 className="panel__name">MARK SHUTTLEWORTH</h3>
                     <p className="panel__body">
                         Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.
@@ -120,7 +120,7 @@ const Crew = () => {
                     ref={ refs.pilot.panel }
                 >
                     <img className="panel__img" src={ Pilot } alt="" />
-                    <h3 className="panel__title">Pilot</h3>
+                    <p className="panel__title">Pilot</p>
                     <h3 className="panel__name">Victor Glover</h3>
                     <p className="panel__body">
                         Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer. 
@@ -137,7 +137,7 @@ const Crew = () => {
                     ref={ refs.engineer.panel }
                 >
                     <img className="panel__img" src={ Engineer } alt="" />
-                    <h3 className="panel__title">Flight Engineer</h3>
+                    <p className="panel__title">Flight Engineer</p>
                     <h3 className="panel__name">Anousheh Ansari</h3>
                     <p className="panel__body">
                         Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.
