@@ -30,11 +30,12 @@ const Crew = () => {
             <h2 className="details__title" id="crew-title" tabIndex="-1"><span>02</span>Meet your crew</h2>
 
             <div className="crew__tabs">
-                <div className="crew__tabs__list" role="tabslist" aria-label="crew">
+                <div className="crew__tabs__list" role="tablist" aria-label="crew">
                     <button
                         id="commander"
                         type="button"
                         role="tab"
+                        aria-label="commander"
                         aria-selected="true"
                         aria-controls="commander-tab"
                         ref={ refs.commander.tab }
@@ -46,6 +47,7 @@ const Crew = () => {
                         id="specialist"
                         type="button"
                         role="tab"
+                        aria-label="specialist"
                         aria-selected="false"
                         aria-controls="specialist-tab"
                         ref={ refs.specialist.tab }
@@ -57,6 +59,7 @@ const Crew = () => {
                         id="pilot"
                         type="button"
                         role="tab"
+                        aria-label="pilot"
                         aria-selected="false"
                         aria-controls="pilot-tab"
                         ref={ refs.pilot.tab }
@@ -68,6 +71,7 @@ const Crew = () => {
                         id="engineer"
                         type="button"
                         role="tab"
+                        aria-label="engineer"
                         aria-selected="false"
                         aria-controls="engineer-tab"
                         ref={ refs.engineer.tab }

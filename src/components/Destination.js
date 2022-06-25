@@ -30,7 +30,7 @@ const Destination = () => {
             <h2 className="details__title" id="destintion-title" tabIndex="-1"><span>01</span>Pick your destination</h2>
 
             <div className="destinations__tabs">
-                <div className="destinations__tabs__list" role="tabslist" aria-label="destinations">
+                <div className="destinations__tabs__list" role="tablist" aria-label="destinations">
                     <button id="moon" type="button" role="tab" aria-selected="true" aria-controls="moon-tab" tabIndex="0" ref={ refs.moon.tab } onKeyDown={ (e) => tabPressHandler(e, "moon", refs) } onClick={ () => tabClickHandler("moon", refs) }>Moon</button>
                     <button id="mars" type="button" role="tab" aria-selected="false" aria-controls="mars-tab" tabIndex="-1" ref={ refs.mars.tab } onKeyDown={ (e) => tabPressHandler(e, "mars", refs) } onClick={ () => tabClickHandler("mars", refs) }>Mars</button>
                     <button id="europa" type="button" role="tab" aria-selected="false" aria-controls="europa-tab" tabIndex="-1" ref={ refs.europa.tab } onKeyDown={ (e) => tabPressHandler(e, "europa", refs) } onClick={ () => tabClickHandler("europa", refs) }>Europa</button>

@@ -22,7 +22,7 @@ const Technology = () => {
             <h2 className="details__title" id="technology-title" tabIndex="-1"><span>03</span>Space launch 101</h2>
 
             <div className="technology__tabs">
-                <div className="technology__tabs__list" role="tabslist" aria-label="technology">
+                <div className="technology__tabs__list" role="tablist" aria-label="technology">
                     <button
                         id="vehicle"
                         type="button"

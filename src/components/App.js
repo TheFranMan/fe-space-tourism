@@ -37,6 +37,7 @@ function App() {
           <Router>
             <Header></Header>
             <main>
+              <h1 className="sr-only">Space Tourism</h1>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="destination" element={<Destination />} />
