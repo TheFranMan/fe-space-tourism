@@ -1,5 +1,5 @@
-Cypress.Commands.add('tabsA11yIntial', (destination) => {
-    cy.visit('/' + destination)
+Cypress.Commands.add('tabsA11yIntial', (url) => {
+    cy.visit('/' + url)
 
     cy.get('[data-cy="tab-list"] > button').then(($tab_list) => {
 
