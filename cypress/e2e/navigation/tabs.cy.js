@@ -74,50 +74,67 @@ describe('can interact with tabs correctly', () => {
         })
     })
 
-    it('pressing left while on a tab displays the tab panel to the left', () => {
+    it('pressing left while on a tab focuses the tab to the left', () => {
         cy.visit('/destination')
 
-        cy.get('[data-cy="tab-list"] > button').as('tab_list')
-        cy.get('[data-cy="tab-panel"]').as('tab_panels')
-
-        cy.get('@tab_list').then($tab_list => {
-            const index = 1
-            const new_index = 0
-
-            // Todo: left arrow / enter button interaction is not working
-            cy.wrap($tab_list[index])
+        cy.get('[data-cy="tab-list"] > button').then($tab_list => {
+            cy.wrap($tab_list)
+              .eq(1)
               .click()
-              .trigger('keydown', { keyCode: 37})
+              .trigger('keydown', { keyCode: 37 })
+              .prev()
+              .should('have.focus')
+        })
+    })
 
-            for ( let i = 0; i < $tab_list.length; i++ ) {
-                if (new_index === i) {
-                    cy.wrap($tab_list[i])
-                    .should('have.attr', 'aria-selected', 'true')
-                    .and('have.attr', 'tabIndex', 0)
+    it('pressing right while on a tab focuses the tab to the right', () => {
+        cy.visit('/destination')
 
-                    continue
-                }
+        cy.get('[data-cy="tab-list"] > button').then($tab_list => {
+            cy.wrap($tab_list)
+              .eq(1)
+              .click()
+              .trigger('keydown', { keyCode: 39 })
+              .next()
+              .should('have.focus')
+        })
+    })
 
-                cy.wrap($tab_list[i])
-                .should('have.attr', 'aria-selected', 'false')
-                .and('have.attr', 'tabIndex', -1)
-            }
+    it('pressing left on the first tab focuses on the last tab', () => {
+        cy.visit('/destination')
 
-            cy.get('@tab_panels').then(($tab_panels) => {
-                for ( let i = 0; i < $tab_panels.length; i++ ) {
-                    if (new_index === i) {
-                        cy.wrap($tab_panels[i])
-                        .should('is.visible')
-                        .and('not.have.attr', 'hidden')
+        cy.get('[data-cy="tab-list"] > button').as('tabs')
 
-                        continue
-                    }
+        cy.get('@tabs').then($tab_list => {
+            cy.wrap($tab_list)
+              .first()
+              .click()
+              .trigger('keydown', { keyCode: 37 })
+        })
 
-                    cy.wrap($tab_panels[i])
-                    .should('not.is.visible')
-                    .and('have.attr', 'hidden')
-                }
-            })
+        cy.get('@tabs').then($tab_list => {
+            cy.wrap($tab_list)
+              .last()
+              .should('have.focus')
+        })
+    })
+
+    it('pressing right on the last tab focuses on the first tab', () => {
+        cy.visit('/destination')
+
+        cy.get('[data-cy="tab-list"] > button').as('tabs')
+
+        cy.get('@tabs').then($tab_list => {
+            cy.wrap($tab_list)
+              .last()
+              .click()
+              .trigger('keydown', { keyCode: 39 })
+        })
+
+        cy.get('@tabs').then($tab_list => {
+            cy.wrap($tab_list)
+              .first()
+              .should('have.focus')
         })
     })
 })

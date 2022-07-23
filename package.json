@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^10.2.0"
+    "cypress": "^10.2.0",
+    "cypress-real-events": "^1.7.1"
   }
 }
