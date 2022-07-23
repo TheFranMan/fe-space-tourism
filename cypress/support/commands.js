@@ -1,25 +1,34 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('tabsA11yIntial', (destination) => {
+    cy.visit('/' + destination)
+
+    cy.get('[data-cy="tab-list"] > button').then(($tab_list) => {
+
+        cy.wrap($tab_list)
+        .first()
+        .should('have.attr', 'aria-selected', 'true')
+        .and('have.attr', 'tabIndex', 0)
+        .siblings()
+        .each(tab => {
+            cy.wrap(tab)
+            .should('have.attr', 'aria-selected', 'false')
+            .and('have.attr', 'tabIndex', -1)
+        })
+    })
+
+    cy.get('[data-cy="tab-panel"]').then(($tab_panels) => {
+
+        cy.wrap($tab_panels)
+        .first()
+        .should('is.visible')
+        .and('not.have.attr', 'hidden')
+
+        cy.wrap($tab_panels)
+          .first()
+          .nextAll()
+          .each(panel => {
+            cy.wrap(panel)
+            .should('not.is.visible')
+            .and('have.attr', 'hidden')
+          })
+    })
+  })

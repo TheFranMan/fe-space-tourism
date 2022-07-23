@@ -30,7 +30,7 @@ const Crew = () => {
             <h2 className="details__title" id="crew-title" tabIndex="-1"><span>02</span>Meet your crew</h2>
 
             <div className="crew__tabs">
-                <div className="crew__tabs__list" role="tablist" aria-label="crew">
+                <div className="crew__tabs__list" role="tablist" aria-label="crew" data-cy="tab-list">
                     <button
                         id="commander"
                         type="button"
@@ -82,12 +82,13 @@ const Crew = () => {
                 </div>
 
                 <div
-                    className="crew__tabs__panel lala"
+                    className="crew__tabs__panel"
                     role="tabpanel"
                     id="commander-tab"
                     tabIndex="0"
                     aria-labelledby="commander"
                     ref={ refs.commander.panel }
+                    data-cy="tab-panel"
                 >
                     <img className="panel__img" src={ Commander } alt="" />
                     <p className="panel__title">Commander</p>
@@ -105,6 +106,7 @@ const Crew = () => {
                     aria-labelledby="specialist"
                     hidden={ true }
                     ref={ refs.specialist.panel }
+                    data-cy="tab-panel"
                 >
                     <img className="panel__img" src={ Specialist } alt="" />
                     <p className="panel__title">Specialist</p>
@@ -122,6 +124,7 @@ const Crew = () => {
                     aria-labelledby="pilot"
                     hidden={ true }
                     ref={ refs.pilot.panel }
+                    data-cy="tab-panel"
                 >
                     <img className="panel__img" src={ Pilot } alt="" />
                     <p className="panel__title">Pilot</p>
@@ -139,6 +142,7 @@ const Crew = () => {
                     aria-labelledby="engineer"
                     hidden={ true }
                     ref={ refs.engineer.panel }
+                    data-cy="tab-panel"
                 >
                     <img className="panel__img" src={ Engineer } alt="" />
                     <p className="panel__title">Flight Engineer</p>

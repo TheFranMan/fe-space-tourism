@@ -37,7 +37,7 @@ const Destination = () => {
                     <button id="titan" type="button" role="tab" aria-selected="false" aria-controls="titan-tab" tabIndex="-1" ref={ refs.titan.tab } onKeyDown={ (e) => tabPressHandler(e, "titan", refs) } onClick={ () => tabClickHandler("titan", refs) }>Titan</button>
                 </div>
 
-                <div className="destinations__tabs__panel lala" role="tabpanel" id="moon-tab" aria-labelledby="moon" tabIndex="0" data-cy="tab-panel" ref={ refs.moon.panel }>
+                <div className="destinations__tabs__panel" role="tabpanel" id="moon-tab" aria-labelledby="moon" tabIndex="0" data-cy="tab-panel" ref={ refs.moon.panel }>
                     <img className="panel__img" src={ Moon } alt="" />
                     <h3 className="panel__title">Moon</h3>
                     <p className="panel__body">
@@ -56,7 +56,7 @@ const Destination = () => {
                     </div>
                 </div>
 
-                <div className="destinations__tabs__panel lala" role="tabpanel" id="mars-tab" aria-labelledby="mars" tabIndex="0" data-cy="tab-panel" hidden={ true } ref={ refs.mars.panel }>
+                <div className="destinations__tabs__panel" role="tabpanel" id="mars-tab" aria-labelledby="mars" tabIndex="0" data-cy="tab-panel" hidden={ true } ref={ refs.mars.panel }>
                     <img className="panel__img" src={ Mars } alt="" />
                     <h3 className="panel__title">Mars</h3>
                     <p className="panel__body">

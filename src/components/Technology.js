@@ -22,7 +22,7 @@ const Technology = () => {
             <h2 className="details__title" id="technology-title" tabIndex="-1"><span>03</span>Space launch 101</h2>
 
             <div className="technology__tabs">
-                <div className="technology__tabs__list" role="tablist" aria-label="technology">
+                <div className="technology__tabs__list" role="tablist" aria-label="technology" data-cy="tab-list">
                     <button
                         id="vehicle"
                         type="button"
@@ -59,12 +59,13 @@ const Technology = () => {
                 </div>
 
                 <div
-                    className="technology__tabs__panel lala"
+                    className="technology__tabs__panel"
                     role="tabpanel"
                     id="vehicle-tab"
                     aria-labelledby="vehicle"
                     tabIndex="0"
                     ref={ refs.vehicle.panel }
+                    data-cy="tab-panel"
                 >
                     <div className="panel__img vehicle"></div>
                     <p className="panel__terminology">THE TERMINOLOGY…</p>
@@ -82,6 +83,7 @@ const Technology = () => {
                     tabIndex="0"
                     hidden={ true }
                     ref={ refs.spaceport.panel }
+                    data-cy="tab-panel"
                 >
                     <div className="panel__img spaceport"></div>
                     <p className="panel__terminology">THE TERMINOLOGY…</p>
@@ -99,6 +101,7 @@ const Technology = () => {
                     tabIndex="0"
                     hidden={ true }
                     ref={ refs.capsule.panel }
+                    data-cy="tab-panel"
                 >
                     <div className="panel__img capsule"></div>
                     <p className="panel__terminology">THE TERMINOLOGY…</p>
