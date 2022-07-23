@@ -59,7 +59,7 @@ describe('can interact with tabs correctly', () => {
 
              cy.get('@tab_panels')
                .first()
-               .siblings('.destinations__tabs__panel')
+               .siblings('[data-cy="tab-panel"]')
                .each(panel => {
                 cy.wrap(panel)
                   .should('not.is.visible')
