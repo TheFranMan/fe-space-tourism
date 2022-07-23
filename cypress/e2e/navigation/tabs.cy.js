@@ -6,8 +6,6 @@ describe('can interact with tabs correctly', () => {
     })
 
     it('clicking on a tab displays the new tab panel', () => {
-        cy.visit('/destination')
-
         cy.canDisplayPanel('destination')
         // cy.canDisplayPanel('crew')
         // cy.canDisplayPanel('technology')
