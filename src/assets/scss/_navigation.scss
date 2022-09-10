@@ -8,7 +8,7 @@
 
     &__btn {
         position: relative;
-        z-index: 2; // Allow it to be clickable
+        z-index: 4; // Allow it to be clickable
         background-color: rgba(1 1 1 / 0);
         border: none;
 
@@ -52,7 +52,7 @@
         right: 0;
         position: absolute;
         list-style-type: none;
-        z-index: 1; // Allow the button to be clickable
+        z-index: 3; // Allow the button to be clickable
         transform: translateX(100%);
         transition: transform .2s ease-in-out;
         background-color: rgba(1 1 1 / .9);
