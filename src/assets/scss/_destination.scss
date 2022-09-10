@@ -5,12 +5,16 @@
         .destinations {
             &__tabs {
                 position: relative;
+                margin-top: 2.6em;
 
                 &__list {
                     display: flex;
                     justify-content: center;
                     gap: 2.7em;
-                    margin-top: 22.8em;
+                    position: absolute;
+                    left: 50%;
+                    top: 19.6em;
+                    transform: translateX(-50%);
 
                     *[role="tab"] {
                         font-family: vars.$ff-secondary;
@@ -37,10 +41,8 @@
 
                     .panel__img {
                         $dimension: 17em;
-                        position: absolute;
-                        bottom: calc(100% + 2.6em);
-                        left: 50%;
-                        transform: translateX(-50%);
+                        margin-inline: auto;
+                        margin-bottom: 7.2em;
                         width: $dimension;
                         height: $dimension;
                     }
@@ -97,8 +99,9 @@
         main {
             .destinations {
                 &__tabs {
+                    margin-top: 6em;
                     &__list {
-                        margin-top: 41.3em;
+                        top: 35.3em;
 
                         *[role="tab"] {
                             font-size: 1.6rem;
@@ -117,11 +120,11 @@
                             $dimension: 30em;
                             width: $dimension;
                             height: $dimension;
-                            bottom: calc(100% + 5.3em);
+                            margin-bottom: 11.9em;
                         }
 
                         .panel__title {
-                            margin-top: .4em;
+                            margin-top: 0;
                             font-size: 8rem;
                         }
 
@@ -157,21 +160,32 @@
         main {
             .destinations {
                 &__tabs {
-                    width: 445px;
-                    margin-left: 66.55em;
+                    margin-top: 9.7em;
 
                     &__list {
-                        justify-content: flex-start;
-                        margin-top: 0;
-                        margin-top: 6.4em;
+                        transform: none;
+                        top:auto;
+                        bottom: 100%;
+                        left: auto;
+                        right: 35em;
                     }
 
                     &__panel {
                         text-align: left;
 
+                        &:not([hidden]){
+                            margin-top: 9.7em;
+                            display: grid;
+                            margin-left: 6em;
+                            margin-top: 0;
+                            grid-template-columns: repeat(2, 445px);
+                            column-gap: 15.7em;
+                        }
+
                         .panel__title {
                             font-size: 10rem;
                             margin-top: 0.37em;
+                            grid-column: 2 / 3;
                         }
 
                         .panel__body {
@@ -179,25 +193,22 @@
                             line-height: 1.77777777778em;
                             margin-top: 0.77777777777em;
                             padding-bottom: 3em;
+                            grid-column: 2 / 3;
+                            width: auto;
                         }
 
                         .panel__img {
                             $dimension: 445px;
                             width: $dimension;
                             height: $dimension;
-                            top: calc(0% + 3.9em);
-                            left: auto;
-                            bottom: auto;
-                            right: calc(100% + 15.7em);
+                            margin: 0;
                             transform: none;
-                        }
-
-                        .panel__body,
-                        .stats {
-                            width: inherit;
+                            grid-column: 1 / 2;
+                            grid-row: 1 / 4;
                         }
 
                         .stats {
+                            grid-column: 2 / 3;
                             margin-top: 2.8em;
                             justify-content: flex-start;
                             gap: 7.9em;
