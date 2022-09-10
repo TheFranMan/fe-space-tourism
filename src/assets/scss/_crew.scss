@@ -4,15 +4,20 @@
     main  {
         .crew {
             &__tabs {
-                margin-top: 25.5em;
+                margin-top: 3.2em;
                 position: relative;
+                z-index: 1;
 
                 &__list {
+                    z-index: 2;
                     display: flex;
                     justify-content: center;
                     gap: 1.6em;
-                    padding-block: 3.2em;
-                    border-top: 1px solid rgba(vars.$cl-secondary, .2);
+                    position: absolute;
+                    top: -3px;
+                    top: 25.5em;
+                    left: 50%;
+                    transform: translateX(-50%);
 
                     *[role="tab"] {
                         $dimension: 10px;
@@ -29,6 +34,18 @@
                 }
 
                 &__panel {
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        width: 100%;
+                        top: 22.3em;
+                        height: 1px;
+                        background-color: rgba(vars.$cl-secondary, .2);
+                    }
+
                     .panel__title {
                         font-family: vars.$ff-accent;
                         font-weight: 400;
@@ -47,10 +64,8 @@
 
                     .panel__img {
                         height: 223px;
-                        position: absolute;
-                        bottom: 100%;
-                        left: 50%;
-                        transform: translateX(-50%);
+                        margin-inline: auto;
+                        margin-bottom: 7.2em;
                     }
 
                     .panel__body {
@@ -72,19 +87,23 @@
         main  {
             .crew {
                 &__tabs {
-                    display: flex;
-                    flex-direction: column;
-                    position: static;
                     margin-top: 6em;
 
                     &__list {
                         border-top: none;
-                        order: 1;
-                        padding: 0;
-                        margin-top: 4em;
+                        top: 22.2em;
                     }
 
                     &__panel {
+                        &::before {
+                            display: none;
+                        }
+
+                        &:not([hidden]) {
+                            display: flex;
+                            flex-direction: column;
+                        }
+
                         .panel__title {
                             font-size: 2.4rem;
                             margin-bottom: 0.33333333333em;
@@ -102,8 +121,9 @@
                         }
 
                         .panel__img {
-                            bottom: 0;
-                            height: 532px;
+                            order: 1;
+                            margin-top: 9em;
+                            height: 572px;
                         }
                     }
                 }
@@ -121,12 +141,13 @@
             .crew {
                 text-align: left;
                 &__tabs {
-                    max-width: 614px;
-                    margin-top: 15.4em;
+                    margin-top: 0;
 
                     &__list {
-                        justify-content: flex-start;
-                        margin-top: 12em;
+                        left: 0;
+                        top: auto;
+                        bottom: 9.4em;
+                        transform: none;
 
                         *[role="tab"] {
                             $dimension: 15px;
@@ -136,25 +157,38 @@
                     }
 
                     &__panel {
+                        &:not([hidden]){
+                            display: grid;
+                            grid-template-columns: 1fr 568px;
+                            column-gap: 8.15em;
+                        }
+
                         .panel__title {
+                            grid-column: 1 / 2;
+                            margin-top: 4.8125em;
                             font-size: 3.2rem;
                             margin-bottom: 0.46875em;
                         }
 
                         .panel__name {
+                            grid-column: 1 / 2;
                             font-size: 5.6rem;
                         }
 
                         .panel__body {
+                            grid-column: 1 / 2;
                             font-size: 1.8rem;
                             line-height: 1.77777777778em;
                             margin: 1.5em 0 0 0;
                         }
 
                         .panel__img {
+                            order: 0;
+                            grid-column: 2 / 3;
+                            grid-row: 1 / 5;
                             height: 681px;
-                            left: 55%;
                             transform: none;
+                            margin: 0;
                         }
                     }
                 }
