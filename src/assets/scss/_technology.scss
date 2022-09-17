@@ -1,21 +1,20 @@
 @use "variables" as vars;
 
 .container-outer.technology {
-    .container {
-        // padding: 0;
-    }
-
     main  {
         .technology {
             &__tabs {
-                margin-top: 23.6em;
                 position: relative;
+                margin-top: 3.2em;
 
                 &__list {
+                    position: absolute;
+                    top: 20.4em;
+                    left: 50%;
+                    transform: translateX(-50%);
                     display: flex;
                     justify-content: center;
                     gap: 1.6em;
-                    margin-bottom: 2.6em;
 
                     *[role="tab"] {
                         $dimension: 40px;
@@ -55,13 +54,10 @@
                     }
 
                     .panel__img {
+                        margin-bottom: 10em;
                         background-size: cover;
-                        position: absolute;
-                        right: 0;
-                        bottom: calc(100% + 2.4em);
-                        left: calc(0% - 2.4em);
-                        // max-width: 375px;
                         width: calc(100vw + 2.4em);
+                        margin-left: -2.4em;
                         height: 170px;
 
                         &.vehicle{
@@ -97,9 +93,10 @@
         main  {
             .technology {
                 &__tabs {
-                    margin-top: 42.6em;
+                    margin: 6em 0 9.7em;
 
                     &__list {
+                        top: 36.6em;
                         *[type="button"] {
                             $dimension: 2.5em;
                             height: $dimension;
@@ -109,7 +106,6 @@
                     }
 
                     &__panel {
-                        margin-top: 4.4em;
 
                         .panel__terminology {
                             font-size: 1.6rem;
@@ -124,15 +120,15 @@
                             font-size: 1.6rem;
                             line-height: 1.75em;
                             max-width: 458px;
-                            margin: 1em auto 0 auto;
+                            margin-top: 1em;
+                            margin-bottom: 0;
+                            margin-inline: auto;
                         }
 
                         .panel__img {
                             height: 310px;
-                            width: 100vw;
-                            // width: 786px;
-                            left: auto;
-                            bottom: calc(100% + 5.6em);
+                            margin-left: 0;
+                            margin-bottom: 16em;
                         }
                     }
                 }
@@ -148,9 +144,17 @@
             .technology {
                 &__tabs {
                     margin-top: 13.7em;
-                    display: flex;
+                    display: grid;
+                    grid-template-columns: 80px 1fr;
+                    column-gap: 8em;
 
                     &__list {
+                        position: initial;
+                        top: auto;
+                        left: auto;
+                        transform: none;
+                        justify-content: initial;
+                        grid-column: 1 / 2;
                         display: flex;
                         flex-direction: column;
                         gap: 3.2em;
@@ -165,26 +169,36 @@
                         text-align: left;
                         margin-top: 0;
 
+                        &:not([hidden]) {
+                            display: grid;
+                            grid-template-columns: 1fr 515px;
+                        }
+
                         .panel__terminology {
                             margin-bottom: .6875em;
+                            grid-column: 1 / 2;
                         }
 
                         .panel__name {
                             font-size: 5.6rem;
+                            grid-column: 1 / 2;
                         }
 
                         .panel__body {
                             font-size: 1.8rem;
                             line-height: 1.77777777778em;
+                            margin-inline: 0;
                             margin-top: 0.94444444444em;
+                            margin-bottom: 6.93333em;
+                            grid-column: 1 / 2;
                         }
 
                         .panel__img {
                             width: 515px;
                             height: 527px;
-                            bottom: 50%;
-                            transform: translateY(50%);
-                            right: 0;
+                            margin: 0;
+                            grid-column: 2 / 3;
+                            grid-row: 1 / 5;
 
                             &.vehicle{
                                 background-image: url("../images/technology/image-launch-vehicle-portrait.jpg");
