@@ -98,8 +98,9 @@
             text-align: left;
 
             .home {
+                $dimension: 274px;
                 display: grid;
-                grid-template-columns: 450px 242px;
+                grid-template-columns: 450px $dimension;
                 margin-top: 25.1em;
                 justify-content: center;
                 column-gap: 38.6em;
@@ -123,14 +124,13 @@
                 }
 
                 &__explore {
-                    $dimension: 274px;
                     height: $dimension;
                     width: $dimension;
                     line-height: $dimension;
                     grid-column: 2 / -1;
                     grid-row: 1 / 4;
                     text-align: center;
-                    // margin-top: 3.375em;
+                    justify-content: end;
                     outline: 0 solid rgba(vars.$cl-secondary, .1);
                     transition: outline .1s linear;
 
