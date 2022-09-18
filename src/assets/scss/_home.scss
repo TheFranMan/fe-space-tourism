@@ -115,7 +115,7 @@
 
                 &__title {
                     font-size: 15rem;
-                    margin-block: .16em;
+                    margin-block-start: .1em;
                 }
 
                 &__body {
@@ -130,7 +130,8 @@
                     grid-column: 2 / -1;
                     grid-row: 1 / 4;
                     text-align: center;
-                    justify-content: end;
+                    margin-top: 3.6em;
+                    // justify-content: end;
                     outline: 0 solid rgba(vars.$cl-secondary, .1);
                     transition: outline .1s linear;
 
@@ -142,5 +143,4 @@
             }
         }
     }
-
 }
