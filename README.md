@@ -62,6 +62,8 @@ Going to continue with Cypress for testing. I found it very powerfull and useful
 
 - [Accessible Routing in React](https://timwright.org/blog/2019/03/23/accessible-routing-in-react/) - This helped turn React Router into something accesible.
 
+- [Blur effect](https://www.youtube.com/watch?v=HbBMp6yUXO0) - A little bit of a cheat. Was having trouble getting the blur effect on the background, so Kevin Powell to the rescue!
+
 ## Author
 
 - Frontend Mentor - [@TheFranMan](https://www.frontendmentor.io/profile/TheFranMan)
