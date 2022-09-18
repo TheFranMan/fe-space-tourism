@@ -123,10 +123,14 @@
                 }
 
                 &__explore {
+                    $dimension: 274px;
+                    height: $dimension;
+                    width: $dimension;
+                    line-height: $dimension;
                     grid-column: 2 / -1;
                     grid-row: 1 / 4;
                     text-align: center;
-                    margin-top: 3.375em;
+                    // margin-top: 3.375em;
                     outline: 0 solid rgba(vars.$cl-secondary, .1);
                     transition: outline .1s linear;
 
